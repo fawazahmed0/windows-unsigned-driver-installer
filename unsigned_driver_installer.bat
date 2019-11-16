@@ -19,8 +19,12 @@ exit
 )
 
 :: Source: https://stackoverflow.com/questions/1894967/how-to-request-administrator-access-inside-a-batch-file
-:: batch code to request admin previleges
-if not "%1"=="am_admin" (powershell start -verb runas '%0' am_admin & exit /b)
+:: Source: https://stackoverflow.com/questions/4051883/batch-script-how-to-check-for-admin-rights
+:: batch code to request admin previleges, if no admin previleges
+net session >nul 2>&1
+if NOT %errorLevel% == 0 (
+powershell start -verb runas '%0' am_admin & exit /b
+)
 
 :: Source: https://stackoverflow.com/questions/672693/windows-batch-file-starting-directory-when-run-as-admin
 :: Going back to script directory
