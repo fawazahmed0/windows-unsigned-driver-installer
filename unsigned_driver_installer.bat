@@ -14,6 +14,7 @@ echo.
 if not exist *.inf (
 echo Please paste this .bat file in driver folder where .inf file is located
 echo Press any key to exit
+cd
 pause > NUL
 exit
 )
