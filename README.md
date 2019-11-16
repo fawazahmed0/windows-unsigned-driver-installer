@@ -1,4 +1,4 @@
-# windows-unsigned-driver-installer
+# Unsigned Driver installer Utility for Windows
  Installs unsigned drivers in windows OS
 
  **How to use**
