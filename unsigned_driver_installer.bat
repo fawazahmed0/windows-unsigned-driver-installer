@@ -56,13 +56,15 @@ files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER >
 
 
 :: Source: https://stackoverflow.com/questions/22496847/installing-a-driver-inf-file-from-command-line
-:: 
-
-
+:: If the bat file is launched from 32 bit program i.e firefox etc, the cmd will start as 32 bit with directory as syswow64 in 64bit pc.
+:: pnputil is not accessible directly from 32 bit cmd and will throw error saying no internal or external command ..
+:: In that case, it should be accessed from here %WinDir%\Sysnative\
+:: Source: https://stackoverflow.com/questions/8253713/what-is-pnputil-exe-location-in-64bit-systems
+:: Source: https://stackoverflow.com/questions/23933888/pnputil-exe-is-not-recognized-as-an-internal-or-external-command
 :: Installing Drivers
-pnputil -i -a *.inf
+pnputil -i -a *.inf > nul 2>&1
 if NOT %errorLevel% == 0 (
-%WinDir%\Sysnative\pnputil.exe -i -a *.inf
+%WinDir%\Sysnative\pnputil.exe -i -a *.inf > nul 2>&1
 )
 
 :: Source: https://social.technet.microsoft.com/Forums/en-US/d109719c-ca97-41e1-a529-0113e23ff5b0/deleting-a-certificate-using-certmgrexe?forum=winserversecurity
