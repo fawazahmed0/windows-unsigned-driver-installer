@@ -58,7 +58,8 @@ files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER >
 :: Source: https://stackoverflow.com/questions/22496847/installing-a-driver-inf-file-from-command-line
 :: Installing Drivers
 echo Installing the drivers
-timeout /t 3 /nobreak
+echo added wait
+timeout /t 3 /nobreak > nul 2>&1
 pnputil -i -a *.inf
 
 :: Source: https://social.technet.microsoft.com/Forums/en-US/d109719c-ca97-41e1-a529-0113e23ff5b0/deleting-a-certificate-using-certmgrexe?forum=winserversecurity
