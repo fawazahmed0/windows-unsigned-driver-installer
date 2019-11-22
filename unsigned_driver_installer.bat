@@ -59,6 +59,7 @@ files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER >
 :: If the bat file is launched from 32 bit program i.e firefox etc, the cmd will start as 32 bit with directory as syswow64 in 64bit pc.
 :: pnputil is not accessible directly from 32 bit cmd and will throw error saying no internal or external command ..
 :: In that case, it should be accessed from here %WinDir%\Sysnative\
+:: I assume, the cmd changes to syswow64, after requesting for admin previleges
 :: Source: https://stackoverflow.com/questions/8253713/what-is-pnputil-exe-location-in-64bit-systems
 :: Source: https://stackoverflow.com/questions/23933888/pnputil-exe-is-not-recognized-as-an-internal-or-external-command
 :: Installing Drivers
