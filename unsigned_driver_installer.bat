@@ -2,7 +2,7 @@
 
 :: Initial message
 echo ====================================================
-echo Do not despair of the mercy of God
+echo Do not despair of the mercy of God [Quran 39:53]
 echo ====================================================
 echo Unsigned Driver Installer Tool For Windows
 echo By fawazahmed0 @ GitHub
