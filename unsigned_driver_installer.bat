@@ -2,6 +2,8 @@
 
 :: Initial message
 echo ====================================================
+echo Do not despair of the mercy of God
+echo ====================================================
 echo Unsigned Driver Installer Tool For Windows
 echo By fawazahmed0 @ GitHub
 echo ====================================================
@@ -79,7 +81,6 @@ rmdir /Q /S files > nul 2>&1
 del /f files.zip > nul 2>&1
 
 :: Installation done
-echo.
 echo.
 echo Driver Installation complete, press any key to exit
 pause > NUL
