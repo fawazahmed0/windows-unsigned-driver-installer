@@ -4,7 +4,7 @@
 ------------
 
 ### How to use
-1. Paste the unsigned_driver_installer.bat in driver folder where *.inf file is located
+1. Paste the unsigned_driver_installer.bat in driver folder where .inf file is located
 2. Double click the unsigned_driver_installer.bat to install the driver
   
 **Download Link:** [Click Here](https://github.com/fawazahmed0/windows-unsigned-driver-installer/releases/latest/download/unsigned_driver_installer.bat "Click Here")
