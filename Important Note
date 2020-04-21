@@ -1,0 +1,5 @@
+This tool will/might stop working after 01-jan-2040, as the myDrivers.cer will expire on that day, so will have to update the certificates before that to avoid breaking this Tool
+Refer this to create new certificate with very long lasting validity:
+http://woshub.com/how-to-sign-an-unsigned-driver-for-windows-7-x64/
+
+Or generate certificate on the fly by adding appropriate logic in unsigned_driver_installer.bat
