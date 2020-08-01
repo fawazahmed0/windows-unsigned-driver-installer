@@ -48,13 +48,13 @@ PowerShell -Command "& {$shell_app=new-object -com shell.application; $filename 
 :: Source: http://woshub.com/how-to-sign-an-unsigned-driver-for-windows-7-x64/
 :: Signing the Drivers
 echo Signing the drivers
-files\inf2cat.exe /driver:. /os:7_X64
-files\inf2cat.exe /driver:. /os:7_X86
-files\SignTool.exe sign /f files\myDrivers.pfx /p testabc /t http://timestamp.verisign.com/scripts/timstamp.dll /v *.cat
+files\inf2cat.exe /driver:. /os:7_X64 > nul 2>&1
+files\inf2cat.exe /driver:. /os:7_X86 > nul 2>&1
+files\SignTool.exe sign /f files\myDrivers.pfx /p testabc /t http://timestamp.verisign.com/scripts/timstamp.dll /v *.cat > nul 2>&1
 
 :: Adding the Certificates
-files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine ROOT
-files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER
+files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine ROOT > nul 2>&1
+files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER > nul 2>&1
 
 
 :: Source: https://stackoverflow.com/questions/22496847/installing-a-driver-inf-file-from-command-line
@@ -65,20 +65,20 @@ files\CertMgr.exe -add files\myDrivers.cer -s -r localMachine TRUSTEDPUBLISHER
 :: Source: https://stackoverflow.com/questions/8253713/what-is-pnputil-exe-location-in-64bit-systems
 :: Source: https://stackoverflow.com/questions/23933888/pnputil-exe-is-not-recognized-as-an-internal-or-external-command
 :: Installing Drivers
-pnputil -i -a *.inf
+pnputil -i -a *.inf > nul 2>&1
 if NOT %errorLevel% == 0 (
-%WinDir%\Sysnative\pnputil.exe -i -a *.inf
+%WinDir%\Sysnative\pnputil.exe -i -a *.inf > nul 2>&1
 )
 
 :: Source: https://social.technet.microsoft.com/Forums/en-US/d109719c-ca97-41e1-a529-0113e23ff5b0/deleting-a-certificate-using-certmgrexe?forum=winserversecurity
 :: Removing the Certificates
-files\CertMgr.exe -del -c -n "Fawaz Ahmed" -s -r localMachine ROOT
-files\CertMgr.exe -del -c -n "Fawaz Ahmed" -s -r localMachine TrustedPublisher
+files\CertMgr.exe -del -c -n "Fawaz Ahmed" -s -r localMachine ROOT > nul 2>&1
+files\CertMgr.exe -del -c -n "Fawaz Ahmed" -s -r localMachine TrustedPublisher > nul 2>&1
 
 :: Deleting the temporary items
 echo Deleting the temporary files and folders
-rmdir /Q /S files
-del /f files.zip
+rmdir /Q /S files > nul 2>&1
+del /f files.zip > nul 2>&1
 
 :: Installation done
 echo.
