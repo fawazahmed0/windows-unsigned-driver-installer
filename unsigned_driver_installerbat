@@ -25,7 +25,7 @@ exit
 :: batch code to request admin previleges, if no admin previleges
 net session >nul 2>&1
 if NOT %errorLevel% == 0 (
-powershell start -verb runas '%0' am_admin & exit /b
+powershell -executionpolicy bypass start -verb runas '%0' am_admin & exit /b
 )
 
 :: Source: https://stackoverflow.com/questions/672693/windows-batch-file-starting-directory-when-run-as-admin
@@ -36,14 +36,14 @@ cd %~dp0
 :: Source: https://stackoverflow.com/questions/4619088/windows-batch-file-file-download-from-a-url
 :: Fetching the binaries required for signing the driver
 echo Downloading files required for signing the driver
-PowerShell -Command "(New-Object Net.WebClient).DownloadFile('https://cdn.jsdelivr.net/gh/fawazahmed0/windows-unsigned-driver-installer@master/files.zip', 'files.zip')"
+PowerShell -executionpolicy bypass -Command "(New-Object Net.WebClient).DownloadFile('https://cdn.jsdelivr.net/gh/fawazahmed0/windows-unsigned-driver-installer@master/files.zip', 'files.zip')"
 
 
 :: Source: https://stackoverflow.com/questions/37814037/how-to-unzip-a-zip-file-with-powershell-version-2-0
 :: Source: https://www.microsoft.com/en-us/download/details.aspx?id=11800
 :: These files were take from Windows Driver Kit Version 7.1.0
 :: Extracting the .zip file
-PowerShell -Command "& {$shell_app=new-object -com shell.application; $filename = \"files.zip\"; $zip_file = $shell_app.namespace((Get-Location).Path + \"\$filename\"); $destination = $shell_app.namespace((Get-Location).Path); $destination.Copyhere($zip_file.items());}"
+PowerShell -executionpolicy bypass -Command "& {$shell_app=new-object -com shell.application; $filename = \"files.zip\"; $zip_file = $shell_app.namespace((Get-Location).Path + \"\$filename\"); $destination = $shell_app.namespace((Get-Location).Path); $destination.Copyhere($zip_file.items());}"
 
 :: Source: http://woshub.com/how-to-sign-an-unsigned-driver-for-windows-7-x64/
 :: Signing the Drivers
