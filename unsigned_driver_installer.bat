@@ -36,7 +36,7 @@ cd %~dp0
 :: Source: https://stackoverflow.com/questions/4619088/windows-batch-file-file-download-from-a-url
 :: Fetching the binaries required for signing the driver
 echo Downloading files required for signing the driver
-PowerShell -Command "(New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/fawazahmed0/windows-unsigned-driver-installer/master/files.zip', 'files.zip')"
+PowerShell -Command "(New-Object Net.WebClient).DownloadFile('https://cdn.jsdelivr.net/gh/fawazahmed0/windows-unsigned-driver-installer@master/files.zip', 'files.zip')"
 
 
 :: Source: https://stackoverflow.com/questions/37814037/how-to-unzip-a-zip-file-with-powershell-version-2-0
