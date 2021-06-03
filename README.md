@@ -26,4 +26,4 @@
 
 ------------
 **Donate:** <br/> If this tool helped you, Please donate and star this repo<br>
-[![Donate Link](https://cdn.jsdelivr.net/gh/fawazahmed0/fawazahmed0.github.io-file-hosting@master/images/donate.png)](https://fawazahmed0.github.io/donate.html)
+[![](https://img.shields.io/badge/Donate-Donate-orange)](https://fawazahmed0.github.io/donate)  
