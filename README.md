@@ -25,5 +25,5 @@
 **Note:**<br/> I made this tool to support unsigned or tampered driver installation at secure boot enabled windows 10, but you can use it for any other purpose, and on any other older windows version.
 
 ------------
-**Support:** <br/> You can help support this tool by as little as $3<br>
+**Support:**
 [Support Link](https://fawazahmed0.github.io/donate)  
